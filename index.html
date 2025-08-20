@@ -1,196 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile | jay-brdy</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f0ebd8;
-        }
+      body {
+        /* font-family: "Lucida Sans", Geneva, Verdana, sans-serif; */
+        font-family: "Hartsinger", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f0ebd8;
+      }
 
-        .window {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 12px;
-            background: #fefefe;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            position: relative;
-        }
+      .window {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 12px;
+        background: #fefefe;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        position: relative;
+      }
 
-        .window-header {
-            background-color: #2F6690;
-            padding: 0.6rem 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 2px solid #ddd;
-        }
+      .window-header {
+        background-color: #2f6690;
+        padding: 0.6rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid #ddd;
+      }
 
-        .window-header .buttons {
-            display: flex;
-            gap: 0.4rem;
-        }
+      .window-header .buttons {
+        display: flex;
+        gap: 0.4rem;
+      }
 
-        .window-header .buttons div {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
+      .window-header .buttons div {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
 
-        .btn-close {
-            background-color: #81C3D7;
-        }
+      .btn-close {
+        background-color: #81c3d7;
+      }
 
-        .btn-minimize {
-            background-color: #81C3D7;
-        }
+      .btn-minimize {
+        background-color: #81c3d7;
+      }
 
-        .btn-maximize {
-            background-color: #81C3D7;
-        }
+      .btn-maximize {
+        background-color: #81c3d7;
+      }
 
-        .profile {
-            padding: 2rem;
-            text-align: center;
-        }
+      .profile {
+        padding: 2rem;
+        text-align: center;
+      }
 
-        .avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-        }
+      .avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+      }
 
-        h1 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-            color: #16425B;
-        }
+      h1 {
+        font-size: 4rem;
+        margin-bottom: 0.5rem;
+        color: #16425b;
+        font-weight: 400;
+      }
 
-        .title {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 1rem;
-        }
+      .title {
+        font-size: 1.5rem;
+        color: #666;
+        margin-bottom: 1rem;
+      }
 
-        .bio {
-            font-size: 0.9rem;
-            color: #333;
-            margin-bottom: 1.5rem;
-        }
+      .bio {
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 1.5rem;
+      }
 
-        .socials a {
-            text-decoration: none;
-            color: #2F6690;
-            margin: 0 0.5rem;
-            font-size: 2rem;
-            transition: color 0.3s;
-        }
+      .socials a {
+        text-decoration: none;
+        color: #2f6690;
+        margin: 0 0.5rem;
+        font-size: 2rem;
+        transition: color 0.3s;
+      }
 
-        .socials a:hover {
-            color: #16425B;
-        }
+      .socials a:hover {
+        color: #16425b;
+      }
 
-        .app-button-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            padding: 10px 0;
-            text-align: center;
-            background-color: #2F6690;
-        }
+      .app-button-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 10px 0;
+        text-align: center;
+        background-color: #2f6690;
+      }
 
-        .app-button {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: #333;
-        }
+      .app-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: #333;
+      }
 
-        .app-button img {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
+      .app-button img {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
 
-        .app-button img:hover {
-            transform: scale(1.1);
-        }
+      .app-button img:hover {
+        transform: scale(1.1);
+      }
 
-        .app-text {
-            font-size: 0.8rem;
-            color: #ffffff;
-            margin-top: 0.4rem;
-            text-align: center;
-        }
+      .app-text {
+        font-size: 0.8rem;
+        color: #ffffff;
+        margin-top: 0.4rem;
+        text-align: center;
+      }
+
+      /* Main Hartsinger font */
+      @font-face {
+        font-family: "Hartsinger";
+        src: url("fonts/Hartsinger.ttf") format("truetype"),
+          url("fonts/Hartsinger.otf") format("opentype");
+      }
+
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="window">
-        <div class="window-header">
-            <div class="buttons">
-                <div class="btn-close"></div>
-                <div class="btn-minimize"></div>
-                <div class="btn-maximize"></div>
-            </div>
+      <div class="window-header">
+        <div class="buttons">
+          <div class="btn-close"></div>
+          <div class="btn-minimize"></div>
+          <div class="btn-maximize"></div>
         </div>
+      </div>
 
-        <div class="profile">
-            <h1>Jay Siritanapivat</h1>
-            <p class="title">Coding and Photography</p>
-            <p class="bio">JavaScript | HTML | React.js | Node.js | PostgreSQL</p>
+      <div class="profile">
+        <h1>Birdy's Collection</h1>
+        <p class="title">For Collectors of all wingspans!</p>
+        <p class="bio">Pokemon | Modern | Raw | Slabs</p>
 
-            <div class="socials">
-                <a href="https://www.linkedin.com/in/jaysirit/"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/jay-brdy"><i class="fab fa-github"></i></a>
-                <a href="mailto:jaysirit+inquiry@gmail.com"><i class="fas fa-envelope"></i></a>
-            </div>
+        <div class="socials">
+          <a href="https://www.youtube.com/@BirdysCollection"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a href="https://tiktok.com/@birdys_collection"
+            ><i class="fab fa-tiktok"></i
+          ></a>
+          <a href="https://instagram.com/birdys_collection"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="mailto:birdyscollection+inquiry@gmail.com"
+            ><i class="fas fa-envelope"></i
+          ></a>
         </div>
+      </div>
 
-        <div class="app-button-container">
-            <a href="https://jays-fishing-market.netlify.app/" class="app-button">
-                <img src="fish_logo.png" alt="App Icon Fish">
-                <div class="app-text">Fishing Market</div>
-            </a>
-            <a href="https://jaysirit-org.github.io/my-personal-website/index.html" class="app-button">
-                <img src="camera.png" alt="App Icon Camera">
-                <div class="app-text">Photography Portfolio</div>
-            </a>
-            <a href="#" class="app-button" onclick="comingSoon()">
-                <img src="loading.gif" alt="App Icon Loading">
-                <div class="app-text">Coming Soon</div>
-            </a>
-            <a href="#" class="app-button" onclick="comingSoon()">
-                <img src="loading.gif" alt="App Icon Loading">
-                <div class="app-text">Coming Soon</div>
-            </a>
-        </div>
+      <div class="app-button-container">
+        <a href="#" class="app-button" onclick="comingSoon()">
+          <img src="loading.gif" alt="App Icon Loading" />
+          <div class="app-text">Coming Soon</div>
+        </a>
+        <a href="#" class="app-button" onclick="comingSoon()">
+          <img src="loading.gif" alt="App Icon Loading" />
+          <div class="app-text">Coming Soon</div>
+        </a>
+        <a href="#" class="app-button" onclick="comingSoon()">
+          <img src="loading.gif" alt="App Icon Loading" />
+          <div class="app-text">Coming Soon</div>
+        </a>
+        <a href="#" class="app-button" onclick="comingSoon()">
+          <img src="loading.gif" alt="App Icon Loading" />
+          <div class="app-text">Coming Soon</div>
+        </a>
+      </div>
     </div>
 
     <script>
-        function comingSoon() {
-            alert('i SAID it\'s COMING SOON!!!');
-        }
+      function comingSoon() {
+        alert("i SAID it's COMING SOON!!!");
+      }
     </script>
-</body>
-
+  </body>
 </html>
